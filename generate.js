@@ -55,7 +55,14 @@ const css = `* {
 body {
   width: 400px;
   height: 300px;
-}`;
+  border: 1px solid #fff; /* să se vadă containerul adevărat */
+
+  /* inserează restul de css pt body */
+}
+
+/* continuă cu css pt elemente 😊 */
+
+`;
 
 fs.mkdirSync(newFolder);
 
