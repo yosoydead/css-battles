@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 400px;
+  height: 300px;
+  border: 1px solid #fff; /* să se vadă containerul adevărat */
+
+  /* inserează restul de css pt body */
+  background: #007065;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* continuă cu css pt elemente 😊 */
+#container{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tri {
+  position: absolute;
+  border-bottom: 100px solid #F5C181;
+  border-left: 120px solid transparent;
+  border-right: 120px solid transparent;
+  z-index: -1;
+}
+.top{
+  z-index: 1;
+  transform: translateY(-50px);
+  border-bottom-color: #FFEECF;
+}
+.bot{
+  transform: translateY(50px);
+  border-bottom-color: #00A79D;
+  z-index: -5000;
+}

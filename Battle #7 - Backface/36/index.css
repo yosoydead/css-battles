@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 400px;
+  height: 300px;
+  border: 1px solid #fff; /* să se vadă containerul adevărat */
+
+  /* inserează restul de css pt body */
+  background: #1A4341;
+}
+
+/* continuă cu css pt elemente 😊 */
+#container{
+  height: 100%;
+  display:flex;
+  justify-content: space-evenly;
+}
+.peg{
+background: #998235;
+  width: 50px;
+  height: 67%;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  transform: scaleY(-1);
+}
+.down{
+  align-self: flex-end;
+  background: #F3AC3C;
+  transform: scaleY(1);
+}
