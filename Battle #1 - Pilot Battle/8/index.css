@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 400px;
+  height: 300px;
+  border: 1px solid #fff; /* să se vadă containerul adevărat */
+
+  /* inserează restul de css pt body */
+  background-color: #6592CF; display: flex; align-items: flex-end; justify-content: center;
+}
+
+/* continuă cu css pt elemente 😊 */
+#container {
+  display: flex;
+  flex-direction: column;
+  width: 140px;
+  height: 250px;
+  background: transparent;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+#base {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#peg {
+  background-color: #060F55;
+  width: 20px;
+  height: 55px;
+}
+#circle {
+  background-color: #060F55;
+  width: 100%;
+  height: 140px;
+  border-radius: 50%;
+  transform: translateY(5px);
+}
+#fork {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  z-index: 20;
+}  
+.part {
+  background-color: #060F55;
+  width: 20px;
+  height: 110px;
+  border-radius: 20px;
+  position: relative;
+  z-index: 1000000;
+}
+.part:after {
+  position: relative;
+  z-index: 1;
+  display: block;
+  content: "";
+  height: 100%;
+  background-color: #6592CF;
+  width: 100%;
+  transform: translate(100%);
+  border-radius: 20px;
+}  
+.long{height: 130px;}
+#first:after{height: 110px;}
+#last:after{content: none;}
