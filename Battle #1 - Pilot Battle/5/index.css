@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 400px;
+  height: 300px;
+  border: 1px solid #fff; /* să se vadă containerul adevărat */
+
+  /* inserează restul de css pt body */
+  background-color: #0B2429;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* continuă cu css pt elemente 😊 */
+.peg {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  background-color: #F3AC3C;
+}
+#first {
+  transform: translate(-50%, 50%);
+  z-index: 3;
+}
+#first:before{
+  display: block;
+  content: "";
+  background-color: #F3AC3C;
+  height: 70px;
+  width: 70px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+#second {
+  z-index: 2;
+  background-color: #998235;
+}
+#second:before{
+  display: block;
+  content: "";
+  background-color: #998235;
+  height: 70px;
+  width: 70px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+#third {
+  transform: translate(50%, -50%);
+}
