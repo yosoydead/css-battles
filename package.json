@@ -1,0 +1,15 @@
+{
+  "name": "css-battles",
+  "version": "1.0.0",
+  "description": "Link cont: https://cssbattle.dev/player/yosoydead",
+  "main": "index.js",
+  "scripts": {
+    "newBattle": "node generate.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^3.0.0"
+  }
+}
