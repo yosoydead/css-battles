@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 400px;
+  height: 300px;
+  border: 1px solid #fff; /* să se vadă containerul adevărat */
+
+  /* inserează restul de css pt body */
+  background-color: #E3516E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* continuă cu css pt elemente 😊 */
+.pi {
+  height: 200px;
+  width: 200px;
+}
+.square{
+  display: flex;
+  background-color: transparent;
+  width: 100%;
+  height: 50%;
+}
+#top:before{
+  display: block;
+  content: "";
+  height: 100%;
+  width: 50%;
+  background-color: #51B5A9;
+  border-top-left-radius: 100%;
+}
+#top:after{
+  display: block;
+  content: "";
+  height: 100%;
+  width: 50%;
+  background-color: #FADE8B;
+  border-top-right-radius: 100%;
+}
+
+#bottom:before{
+  display: block;
+  content: "";
+  height: 100%;
+  width: 50%;
+  background-color: #F7F3D7;
+  border-bottom-left-radius: 100%;
+}
