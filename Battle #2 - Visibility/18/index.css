@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 400px;
+  height: 300px;
+  border: 1px solid #fff; /* să se vadă containerul adevărat */
+
+  /* inserează restul de css pt body */
+  background: #5C434C;
+}
+
+/* continuă cu css pt elemente 😊 */
+#container{
+  display: flex;
+  flex-direction: column;
+}
+.row{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px 0;
+}
+.chestie {
+  width: 80px;
+  height: 80px;
+  background: #F09462;
+  border-top-left-radius: 100%;
+}
+.alb{
+  background: #F5D6B4;
+}
