@@ -9,10 +9,20 @@ const warningText = chalk.bold.yellow("Atenție!");
 const infoText = chalk.underline.blueBright("Info!");
 const log = console.log;
 
-const getDirectories = source =>
-  fs.readdirSync(source, {withFileTypes: true})
+const getDirectories = (source, sort = true) => {
+  const filter = fs.readdirSync(source, {withFileTypes: true})
     .filter(p => p.isDirectory() && (p.name !== '.git' && p.name !== 'node_modules'))
-    .map(p => p.name);
+    
+    if (sort) {
+      filter.sort(function(a, b) {
+        const pa = path.resolve(rootPath, a.name);
+        const pb = path.resolve(rootPath, b.name);
+  
+        return fs.statSync(pa).birthtimeMs - fs.statSync(pb).birthtimeMs;
+      });
+    }
+    return filter.map(p => p.name);
+};
 
 const cacheFilePath = path.resolve(rootPath, ".cache");
 
@@ -68,8 +78,10 @@ const generateFiles = (whereTo) => {
 
 const refreshCache = () => {
   const battleFolders = getDirectories(rootPath);
+  log(battleFolders);
   const total = battleFolders.reduce((acc, p) => {
-    const x = getDirectories(path.resolve(rootPath, p));
+    log(path.resolve(rootPath, p));
+    const x = getDirectories(path.resolve(rootPath, p), false);
     return acc + x.length;
   }, 0);
 
