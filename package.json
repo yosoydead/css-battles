@@ -4,7 +4,7 @@
   "description": "Link cont: https://cssbattle.dev/player/yosoydead",
   "main": "index.js",
   "scripts": {
-    "newBattle": "node generate.js",
+    "new": "node generate.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
