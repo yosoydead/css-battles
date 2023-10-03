@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 400px;
+  height: 300px;
+  border: 1px solid #fff; /* să se vadă containerul adevărat */
+
+  /* inserează restul de css pt body */
+  background: #191919;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* continuă cu css pt elemente 😊 */
+div {
+  width: 200px;
+  height: 200px;
+  display: grid;
+  grid-template-rows:    repeat(2, 1fr);
+grid-template-columns: repeat(2, 1fr);
+}
+i {
+  display: block;
+  width: 100px;
+  height: 50px;
+  background: #F9E492;
+}
+.b {
+  background: #4F77FF;
+  height: 100px;
+  width: 50px;
+}
+#q {
+  align-self: flex-end;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+}
+#w {
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+#e {
+  justify-self: flex-end;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+#r {
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
