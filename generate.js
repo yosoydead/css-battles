@@ -1,8 +1,17 @@
-const path = require("path");
-const fs = require("fs");
-const chalk = require('chalk');
+// const path = require("path");
+// const fs = require("fs");
+// const chalk = require('chalk');
+import path from "path";
+import fs from "fs";
+import chalk from "chalk";
+import { fileURLToPath } from 'url';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// const rootPath = __dirname;
 const rootPath = __dirname;
+console.log(rootPath);
 const errorText = chalk.bold.red('Eroare!');
 const successText = chalk.bold.green("Succes!");
 const warningText = chalk.bold.yellow("Atenție!");
@@ -11,7 +20,7 @@ const log = console.log;
 
 const getDirectories = (source, sort = true) => {
   const filter = fs.readdirSync(source, {withFileTypes: true})
-    .filter(p => p.isDirectory() && (p.name !== '.git' && p.name !== 'node_modules'))
+    .filter(p => p.isDirectory() && (p.name !== '.git' && p.name !== 'node_modules' && p.name !== 'public' && p.name !== 'src'))
     
     if (sort) {
       filter.sort(function(a, b) {
@@ -88,7 +97,13 @@ const refreshCache = () => {
   log(infoText, "Ultimul folder de battle:", chalk.underline(battleFolders[battleFolders.length - 1]));
   log(infoText, "Numărul total de chestii terminate:", chalk.underline(total));
 
-  fs.writeFileSync(cacheFilePath, JSON.stringify({number: total+1, folder :battleFolders[battleFolders.length - 1]}));
+  const obj = { battles: {} };
+  battleFolders.forEach(b => {
+    const a = getDirectories(path.resolve(rootPath, b), false);
+    obj['battles'][b] = a;
+  });
+
+  fs.writeFileSync(cacheFilePath, JSON.stringify({...obj, number: total+1, folder :battleFolders[battleFolders.length - 1]}));
   log(successText, "Am generat fișierului de cache.");
 
   const fullPath = path.resolve(rootPath, battleFolders[battleFolders.length - 1], `${total+1}`);
