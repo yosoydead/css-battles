@@ -11,7 +11,8 @@ const __dirname = path.dirname(__filename);
 
 // const rootPath = __dirname;
 const rootPath = __dirname;
-console.log(rootPath);
+const battlesPath = path.resolve(rootPath, 'src', 'battles');
+// console.log(rootPath);
 const errorText = chalk.bold.red('Eroare!');
 const successText = chalk.bold.green("Succes!");
 const warningText = chalk.bold.yellow("Atenție!");
@@ -24,8 +25,8 @@ const getDirectories = (source, sort = true) => {
     
     if (sort) {
       filter.sort(function(a, b) {
-        const pa = path.resolve(rootPath, a.name);
-        const pb = path.resolve(rootPath, b.name);
+        const pa = path.resolve(source, a.name);
+        const pb = path.resolve(source, b.name);
   
         return fs.statSync(pa).birthtimeMs - fs.statSync(pb).birthtimeMs;
       });
@@ -86,11 +87,11 @@ const generateFiles = (whereTo) => {
 }
 
 const refreshCache = () => {
-  const battleFolders = getDirectories(rootPath);
+  const battleFolders = getDirectories(battlesPath);
   log(battleFolders);
   const total = battleFolders.reduce((acc, p) => {
-    log(path.resolve(rootPath, p));
-    const x = getDirectories(path.resolve(rootPath, p), false);
+    log(path.resolve(battlesPath, p));
+    const x = getDirectories(path.resolve(battlesPath, p), false);
     return acc + x.length;
   }, 0);
 
@@ -99,14 +100,14 @@ const refreshCache = () => {
 
   const obj = { battles: {} };
   battleFolders.forEach(b => {
-    const a = getDirectories(path.resolve(rootPath, b), false);
+    const a = getDirectories(path.resolve(battlesPath, b), false);
     obj['battles'][b] = a;
   });
 
   fs.writeFileSync(cacheFilePath, JSON.stringify({...obj, number: total+1, folder :battleFolders[battleFolders.length - 1]}));
   log(successText, "Am generat fișierului de cache.");
 
-  const fullPath = path.resolve(rootPath, battleFolders[battleFolders.length - 1], `${total+1}`);
+  const fullPath = path.resolve(battlesPath, battleFolders[battleFolders.length - 1], `${total+1}`);
   generateFiles(fullPath);
 }
 
