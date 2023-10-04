@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 400px;
+  height: 300px;
+  border: 1px solid #fff; /* să se vadă containerul adevărat */
+
+  /* inserează restul de css pt body */
+  background: #191919;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* continuă cu css pt elemente 😊 */
+div {
+  width: 100px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+}
+i {
+  display: block;
+}
+.arrow {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 50px solid #4F77FF;
+}
+.chevron {
+  height: 100%;
+  position: relative;
+  background: #4F77FF;
+}
+.chevron::before,
+.chevron::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  border-bottom: 50px solid #191919;
+}
+.chevron::before {
+  border-right: 50px solid transparent;
+}
+.chevron::after {
+  right: 0;
+  border-left: 50px solid transparent;
+}
+.arrow.a {
+  position: absolute;
+  left: 0px;
+  border-top-color: #191919;
+}
