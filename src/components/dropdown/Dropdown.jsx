@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 function Dropdown({
   name,
   label,
@@ -11,13 +13,12 @@ function Dropdown({
       <select
         name={name}
         id={name}
-        onChange={(e) => {
-          console.log('onchange', e)
-        }}
+        onChange={onChange}
+        value={selectedValue}
       >
         {/* {list} */}
         { list.map(el => {
-            return <option value={el}>{el}</option>
+            return <option value={el} key={`${name}_${el}`}>{el}</option>
           })
         }
       </select>
