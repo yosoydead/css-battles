@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 400px;
+  height: 300px;
+  border: 1px solid #fff; /* să se vadă containerul adevărat */
+
+  /* inserează restul de css pt body */
+}
+
+/* continuă cu css pt elemente 😊 */
+div {width: 100%;}
+  div:before,
+  div:after{
+    display: block;
+    content: '';
+    height: 50%;
+  }
+  #a{height: 100px;}
+  #a:before{background:#F7EC7D;}
+  #a:after{background:#E38F66;}
+  #b{height:200px;}
+  #b:before{background:#AA445F;}
+  #b:after{background:#62306D;}

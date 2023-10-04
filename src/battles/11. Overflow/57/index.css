@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 400px;
+  height: 300px;
+  border: 1px solid #fff; /* să se vadă containerul adevărat */
+
+  /* inserează restul de css pt body */
+  background: #191919;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* continuă cu css pt elemente 😊 */
+div {
+  width: 110px;
+  height: 110px;
+  background: #4F77FF;
+  position: relative;
+}
+#gauri, #cercuri {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+i {
+  display: block;
+  position: absolute;
+  width: 200px;
+  height: 90px;
+  background: #191919;
+  border-radius: 100px / 50px;
+  border: none;
+  z-index: 1;
+}
+.c {
+  width: 45px;
+  height: 45px;
+  background: #F9E492;
+  border-radius: 50%;
+}
+
+.c::before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: #4F77FF;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.c.tl {
+  top: -20px;
+  left: -20px;
+}
+.c.tl::before {
+  left: -3px;
+  top: 7px;
+}
+.c.tr {
+  top: -20px;
+  right: -20px;
+}
+.c.tr::before {
+  right: -3px;
+  top: 7px;
+}
+
+.c.bl {
+  bottom: -20px;
+  left: -20px;
+}
+.c.bl::before {
+  left: -3px;
+  bottom: 7px;
+}
+.c.br {
+  bottom: -20px;
+  right: -20px;
+}
+.c.br::before {
+  right: -3px;
+  bottom: 7px;
+}
+.tl {
+  top: -85px;
+  left: -139px;
+  transform: rotate(45deg);
+}
+.bl {
+  bottom: -85px;
+  left: -139px;
+  transform: rotate(-45deg);
+}
+.tr {
+  top: -85px;
+  right: -139px;
+  transform: rotate(-45deg);
+}
+.br {
+  bottom: -85px;
+  right: -139px;
+  transform: rotate(45deg);
+}

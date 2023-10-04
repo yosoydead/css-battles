@@ -23,7 +23,6 @@ function App() {
 
     await import (`./battles/${e}/${n}/index.html`)
       .then(r => {
-        console.log(r);
         setIframeData(r.default);
         setEdition(e);
         setBattle(n);

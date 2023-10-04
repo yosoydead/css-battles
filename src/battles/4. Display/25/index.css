@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 400px;
+  height: 300px;
+  border: 1px solid #fff; /* să se vadă containerul adevărat */
+
+  /* inserează restul de css pt body */
+  background: #998235;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* continuă cu css pt elemente 😊 */
+#container{display:flex;}
+  .chestie{
+    width: 50px;
+    height: 20px;
+    margin: 0 10px;
+  }
+  .chestie:before,
+  .chestie:after{
+    display: block;
+    content: "";
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+  }
+  .chestie:before{
+    height: 100px;
+    width: 80px;
+    background: #1A4341;
+    transform: translateY(-80px) translateX(-30px);
+  }
+  .chestie:after{
+    width: 80px;
+    height: 60px;
+    background: #F3AC3C;
+    transform: translateY(-60px) translateX(-30px);
+  }
+  .reverse{
+    transform: rotate(180deg) scaleX(-1) translateX(30px);
+  }

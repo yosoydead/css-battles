@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 400px;
+  height: 300px;
+  border: 1px solid #fff; /* să se vadă containerul adevărat */
+
+  /* inserează restul de css pt body */
+  background: #1A4341;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* continuă cu css pt elemente 😊 */
+div:before,
+  div:after{display:block;content:"";}
+  #container{ position: relative;}
+  #sticla{
+    width: 100px;
+    height: 140px;
+    background: #F3AC3C;
+    transform: translateY(30px);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  #sticla:before,
+  #sticla:after{
+    background: #F3AC3C;
+    position: absolute;
+    height: 20px;
+  }
+  #sticla:before{
+    width: 50px;
+    transform: translateY(-20px);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  #sticla:after{width: 20px;transform: translateY(-40px);}
+  #maner{
+    width: 150px;
+    height: 20px;
+    background: #F3AC3C;
+    position: absolute;
+    top: 0;
+    border-radius: 10px;
+    transform: translate(0px, -30px);
+  }
+  #maner:before{
+    background: #F3AC3C;
+    width: 20px;
+    height: 40px;
+    border-radius: 10px;
+    transform: translate(130px);
+  }
+  #gel{
+    position: absolute;
+    background: #998235;
+    height: 80px;
+    width: 100%;
+    transform: translateY(-50px);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  #gel:before,
+  #gel:after{
+	width: 50%;
+    height: 50px;
+	border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+  }
+  #gel:before{background: #998235;transform: translateY(-30px);}
+  #gel:after{background: #F3AC3C;transform: translate(50px, -80px) scaleY(-1);}
+  #strop{
+    position: absolute;
+    height: 20px;
+    width: 10px;
+    transform: translate(140px);
+    top: 0;
+  }
+  #strop:before,
+  #strop:after{
+	background: #998235;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+  }
+  #strop:before{transform: translate(-10px, 20px);}
+  #strop:after{transform: translate(-10px, 30px);}

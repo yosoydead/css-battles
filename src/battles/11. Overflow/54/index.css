@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 400px;
+  height: 300px;
+  border: 1px solid #fff; /* să se vadă containerul adevărat */
+
+  /* inserează restul de css pt body */
+  background: #F9E492;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* continuă cu css pt elemente 😊 */
+div {background: #191919;}
+  #a {
+    width: 100px;
+    height: 55px;
+    border-radius: 10px;
+    position: relative;
+  }
+  #a::before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background: #191919;
+    bottom: -45px;
+    left: 25px;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  #b {
+    background: #F9E492;
+    position: absolute;
+    top: -45px;
+    width: 100%;
+    height: 60px;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+  }
+  .deget {
+    width: 20px;
+    height: 100%;
+    border-radius: 40px;
+  }
+  .arat {
+    margin-left: 5px;
+  }
+  .inel, .arat { height: 44px; }
+  .mic { height: 35px; }
+  .arat, .inel, .mic {
+    align-self: flex-end;
+  }
+
+  .mare {
+    position: absolute;
+    transform: rotate(60deg) translate(-15px, -10px);
+    border: 5px solid #F9E492;
+    height: 75px;
+    width: 22px;
+  }
