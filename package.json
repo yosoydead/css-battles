@@ -6,6 +6,8 @@
   "type": "module",
   "scripts": {
     "new": "node generate.js",
+    "createCache": "node createCache.js",
+    "postinstall": "npm run createCache",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
     "build": "vite build",
