@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 400px;
+  height: 300px;
+  border: 1px solid #fff; /* să se vadă containerul adevărat */
+
+  /* inserează restul de css pt body */
+  background: #191919;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* continuă cu css pt elemente 😊 */
+div {
+  width: 100px;
+  height: 100px;
+  background: #E08027;
+  border-radius: 50%;
+  border: 30px solid #824B20;
+  position: relative;
+}
+div::before {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  position: absolute;
+  border: 20px solid #FFF58F;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  transform: rotate(-45deg);
+}
+i {
+  display: block;
+  position: absolute;
+  background: #FFF58F;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  top: 50%;
+}
+#l {
+  translate: -50% -50%;
+}
+#r {
+  right: 0;
+  translate: 50% -50%;
+}

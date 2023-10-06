@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 400px;
+  height: 300px;
+  border: 1px solid #fff; /* să se vadă containerul adevărat */
+
+  /* inserează restul de css pt body */
+  background: #191919;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* continuă cu css pt elemente 😊 */
+div {
+  width: 125px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+i {
+  display: block;
+  border-right: 100px solid #5DBCF9;
+  border-top: 100px solid transparent;
+  border-bottom: 100px solid transparent;
+  translate: 15px 0;
+  z-index: 1;
+}
+i::before {
+  display: block;
+  content: "";
+  width: 55px;
+  height: 50px;
+  position: absolute;
+  background: #5DBCF9;
+  translate: -50% -50%;
+  border-radius: 10px 0 0 10px;
+}
+b {
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: transparent;
+  border: 10px solid #5DBCF9;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  position: absolute;
+  transform: translate(-37%,0) rotate(45deg);
+}
+b::before,
+b::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  border: 10px solid #5DBCF9;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+b::before {
+  width: 130px;
+  height: 130px;
+  translate: -35px -35px;
+}
+b::after {
+  width: 180px;
+  height: 180px;
+  translate: -60px -60px;
+}
