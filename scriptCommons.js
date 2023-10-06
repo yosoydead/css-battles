@@ -101,8 +101,10 @@ const refreshCache = () => {
     obj['battles'][b] = a;
   });
 
-  fs.writeFileSync(cacheFilePath, JSON.stringify({...obj, number: total, folder :battleFolders[battleFolders.length - 1]}));
+  fs.writeFileSync(cacheFilePath, JSON.stringify({...obj, number: total, folder: battleFolders[battleFolders.length - 1]}));
   log(successText, "Am generat fișierului de cache.");
+
+  return obj;
 }
 
 export {

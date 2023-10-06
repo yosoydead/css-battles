@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "new": "node generate.js",
+    "newBattle": "node generateBattle.js",
     "newEdition": "node generateEdition.js",
     "createCache": "node createCache.js",
     "dev": "vite",
