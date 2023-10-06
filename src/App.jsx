@@ -12,7 +12,7 @@ function App() {
   const [battle, setBattle] = useState("");
   const [htmlCode, setHtmlCode] = useState("");
   const [cssCode, setCssCode] = useState("");
-  const [checkbox, setCheckbox] = useState("false");
+  const [checkbox, setCheckbox] = useState(false);
   
   const loadResource = async (newEdition, newNum) => {
     let e;
@@ -82,7 +82,7 @@ function App() {
 
         <section id="main__showcase--code">
           <p>html | css</p>
-          <label class="switch">
+          <label className="switch">
             <input
               type="checkbox"
               value={checkbox}
@@ -91,7 +91,7 @@ function App() {
                 setCheckbox(e.target.checked)
               }}
             />
-            <span class="slider"></span>
+            <span className="slider"></span>
           </label>
           <Code
             title={checkbox ? "Css Code" : "Html Code"}

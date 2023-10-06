@@ -1,6 +1,6 @@
 function Code({ title, content}) {
   return (
-    <section class="code">
+    <section className="code">
       <h5>{title}</h5>
 
       <pre>
